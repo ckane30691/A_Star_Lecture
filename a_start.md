@@ -51,7 +51,32 @@
 * Drop the starting node A from your open list to your closed list.
 ![](./parent-with-children.png)
 
+---
+
 ## Step 3: Determine the Node with the Lowest F Cost
 * F = G + H
 * Where G is the movement cost to move from starting point A to a given node, following the path generated to get there.
 * Where H is the estimated movement cost to move from that node to the final destination, point B
+---
+
+## Step 3: Continued - Determining G
+* We can calculate the G cost of a specific path to a node by taking the G cost of its parent and adding the cost it took to move in that direction.
+
+**NOTE:**  In our example we're going to use a cost of 10 for horizontal moves & vertical moves and 14 for the diagonal.  The theory behind picking weights for horizontal, vertical, and diagonal movement is beyond the scope of this talk.
+
+---
+
+## Step 3: Continued - Estimating H
+* One of the most common ways of estimating H is via the Manhattan Method.
+* Called Manhattan Method because it's similar to the way you count city blocks in New York.  You only count horizontal and vertical because you can't cut diagonally across the block
+
+* We calculate the total number of nodes moved horizontally and vertically to reach the target node from the current node, ignoring diagonal movement & obstacles in the way.  We then multiply that cost by our cost to move horizontally and vertically (10 in our example)
+---
+
+## Step 3: Continued - Determining F
+![](f-cost.png)
+* In the above diagram, in the square with the letters, G = 10 because its square is just one away from the starting square.  The squares orthogonal to the starting square also all have a G score of 10.  The diagonal squares all have G scores of 14.
+
+* The H scores are determined by estimating the Manhattan distance between the given node and the red end square.  In the case of our lettered square it's 3(the number of nodes in the path) X 10(our horizontal movement cost)
+
+* F is just G + H

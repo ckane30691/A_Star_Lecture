@@ -88,3 +88,7 @@
 * We check all the adjacent neighbors of our current node ignoring the ones that are on the closed list or have illegal terrain.  Add nodes to the open list if they aren't already on the open list.  Make the current node the parent of the new node added.
 * If an adjacent node is already on the open list, check to see if this path to the node is a better one.  In other words check to see if its G score is lower if we use the current node to get there.  If it is, change the parent of that node to the current node.  Finally recalculate both the F & G scores of that node.
 * Stop when the target node has been added to the closed list (path has been found) or the open list is empty and the target node was never added (no path exists).
+
+## Step 5: Save the Path
+* Working backwards from the target square, follow the parent chain back to the starting square.  That's your path!
+![](save.png)

@@ -29,3 +29,6 @@
 3. Save the path.  Working backwards from the target node we go from each node to its parent until we reach the starting node. (That's your path)
 
 ---
+
+## Step 0: Divide Search Space Into Nodes
+![](./grid.png)

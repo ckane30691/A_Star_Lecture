@@ -32,3 +32,26 @@
 
 ## Step 0: Divide Search Space Into Nodes
 ![](./grid.png)
+
+---
+
+## Step 1: Add Starting Node to Our Open List
+
+---
+
+## Step 2: Conduct a Search to Find the Shortest Path
+  * Start at Point A and check all of its adjacent nodes
+  * Search outward until we find our target
+
+---
+
+## Step 2: Explained
+* Begin with starting point A and add it to the 'open list' of nodes to be considered.
+* Look at all walkable nodes adjacent to the starting point, ignoring illegal moves, and add them to the open list too.  Storing point A as their parent.
+* Drop the starting node A from your open list to your closed list.
+![](./parent-with-children.png)
+
+## Step 3: Determine the Node with the Lowest F Cost
+* F = G + H
+* Where G is the movement cost to move from starting point A to a given node, following the path generated to get there.
+* Where H is the estimated movement cost to move from that node to the final destination, point B
